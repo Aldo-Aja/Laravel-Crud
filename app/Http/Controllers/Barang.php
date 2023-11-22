@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BarangModels; // Make sure to include the correct namespace
+use App\Models\BarangModels; 
 
 class Barang extends Controller
 {
