@@ -7,7 +7,20 @@ use Illuminate\Support\Facades\Auth;
 
 class Login extends Controller
 {
-    public function index() 
+    public function index()
+    {
+        if ($user = Auth::user()) {
+            if ($user->level == 1) {
+                return redirect()->intended('admin');
+            } elseif ($user->level == 2) {
+                return redirect()->intended('admin');
+            }
+        }
+
+        return view('login');
+        
+    }
+    public function proses(Request $request) 
     {
         $request->validate([
             'username' => 'required',

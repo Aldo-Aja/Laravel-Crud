@@ -43,7 +43,11 @@
                                     <td><span class="badge badge-{{ $row->kondisi == 'baru' ? 'primary' : 'danger' }} p-1">{{$row->kondisi}}</span></td>
                                     <td>{{$row->jumlah_barang}}</td>
                                     <td>{{$row->sumber_dana}}</td>
-                                    <td>Edit | Hapus</td>
+                                    <td>
+                                        <a href="/barang/update/{{$row->id}}" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="{{ route('barang.delete', ['id' => $row->id]) }}" class="btn btn-sm btn-danger">Hapus</a>
+
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
